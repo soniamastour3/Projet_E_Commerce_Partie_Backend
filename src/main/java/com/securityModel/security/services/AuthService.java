@@ -189,7 +189,7 @@ public class AuthService {
         return new MessageResponse("User registered successfully!");
     }
 
-    public  MessageResponse registerProvider(SignupRequest signUpRequest,  MultipartFile file) throws MessagingException {
+    public  MessageResponse registerProvider(SignupRequest signUpRequest) throws MessagingException {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             return new MessageResponse("Error: Username is already taken!");
         }
@@ -205,8 +205,7 @@ public class AuthService {
                 encoder.encode(signUpRequest.getPassword()),
                 signUpRequest.getCompany()
         );
-        String img = storesService.store(file);
-        provider.setImage(img);
+
 
         // Set roles and save the provider
         Set<Role> roles = new HashSet<>();

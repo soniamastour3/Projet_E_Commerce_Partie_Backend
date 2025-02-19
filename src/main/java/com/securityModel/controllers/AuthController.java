@@ -79,8 +79,8 @@ public class AuthController {
         return ResponseEntity.ok(messageResponse);
     }
     @PostMapping(value = "/signupProvider", consumes = { "multipart/form-data" })
-    public ResponseEntity<?> signupProvider(SignupRequest signUpRequest, MultipartFile file) throws MessagingException {
-        MessageResponse messageResponse = authService.registerProvider(signUpRequest, file);
+    public ResponseEntity<?> signupProvider(SignupRequest signUpRequest) throws MessagingException {
+        MessageResponse messageResponse = authService.registerProvider(signUpRequest);
         return ResponseEntity.ok(messageResponse);
     }
 

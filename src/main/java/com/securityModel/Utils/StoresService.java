@@ -17,7 +17,7 @@ import java.util.Random;
 
 @Service
 public class StoresService {
-    private final Path rootLocation = Paths.get("upload");
+    private final Path rootLocation = Paths.get("C:\\Users\\ahmed\\Desktop\\Projet E-commerce\\Backend\\Projet_E_Commerce_Partie_Backend\\upload");
 
 
 
